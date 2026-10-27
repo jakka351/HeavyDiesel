@@ -1,5 +1,6 @@
 
 <img width="20%" height="20%" align="right" alt="image" src="https://github.com/user-attachments/assets/63a38050-adf2-447d-b1b8-dfcbdee27819" />
+<a href="https://tester.engineering"><img width="24%" height="24%" align="right" alt="RightToRepair" src="https://github.com/user-attachments/assets/b41c7c2a-f293-45aa-97d7-bebcd65e9433" /></a>
 
 # Heavy Diesel
 ### RP1210/J1939 Heavy Duty Project Bootstrap
