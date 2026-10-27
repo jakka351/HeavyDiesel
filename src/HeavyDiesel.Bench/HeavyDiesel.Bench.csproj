@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    HeavyDiesel.Bench - the reference WinForms host.
+
+    x86 IS NOT OPTIONAL. RP1210 vendor DLLs are 32-bit; a 64-bit process gets Win32
+    error 193 from LoadLibrary and no adapter ever connects. PlatformTarget=x86 makes
+    the EXE run as a 32-bit process on 64-bit Windows. Do not change it to AnyCPU.
+
+    Default WinForms look on purpose: no theme, no custom controls. The point of this
+    app is to show the stack working, not to be a product.
+  -->
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net481</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>HeavyDiesel.Bench</RootNamespace>
+    <AssemblyName>HeavyDiesel.Bench</AssemblyName>
+    <Version>0.1.0</Version>
+    <Product>HeavyDiesel</Product>
+    <Authors>Tester Present Specialist Automotive Solutions</Authors>
+    <Description>RP1210 adapter enumeration and live J1939 network view.</Description>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HeavyDiesel.Core\HeavyDiesel.Core.csproj" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

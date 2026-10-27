@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Smoke test: a plain console program, no test framework, that drives the J1939 stack
+    over the simulated link and fails loudly if anything is wrong. Runs on any OS:
+
+        dotnet run (Release) with the SmokeTest project; see README
+
+    It is deliberately framework-free so it doubles as sample code for using the stack
+    without hardware.
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>HeavyDiesel.SmokeTest</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\HeavyDiesel.Core\HeavyDiesel.Core.csproj" />
+  </ItemGroup>
+
+</Project>

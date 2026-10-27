@@ -1,0 +1,9 @@
+; Example of the CSV the bench loads from Catalogue > Load SPN / PGN names.
+; kind,number,name   - kind is SPN or PGN; everything after the second comma is the name.
+; The entries below are protocol parameter groups the stack already names itself; they are
+; here only to show the format. Put YOUR licensed or self-sourced definitions in your own file.
+kind,number,name
+PGN,59904,Request
+PGN,60928,Address Claimed
+PGN,65226,DM1 - active diagnostic trouble codes and lamp status
+PGN,65227,DM2 - previously active diagnostic trouble codes

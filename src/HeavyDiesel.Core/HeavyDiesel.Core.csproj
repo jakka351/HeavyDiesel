@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    HeavyDiesel.Core - RP1210 transport + SAE J1939 protocol stack.
+
+    .NET Framework 4.8.1, class library, AnyCPU. The LIBRARY is bitness-neutral; the
+    HOST PROCESS must be 32-bit because every RP1210 vendor DLL is x86 (see
+    Rp1210/Rp1210Native.cs). HeavyDiesel.Bench enforces that with PlatformTarget=x86.
+
+    SDK-style project so it opens in Visual Studio 2019/2022 and also builds with
+    `dotnet build` on any OS via the Microsoft.NETFramework.ReferenceAssemblies package
+    (which is why that package reference is there - it is not a runtime dependency).
+  -->
+
+  <PropertyGroup>
+    <!--
+      net481 is the real target. net8.0 exists so the protocol stack can be exercised by
+      tests/HeavyDiesel.SmokeTest on any OS (there is no RP1210 on Linux; the simulated
+      link is enough to drive address claim, transport and the network map end to end).
+    -->
+    <TargetFrameworks>net481;net8.0</TargetFrameworks>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>HeavyDiesel</RootNamespace>
+    <AssemblyName>HeavyDiesel.Core</AssemblyName>
+    <Version>0.1.0</Version>
+    <Authors>Tester Present Specialist Automotive Solutions</Authors>
+    <Product>HeavyDiesel</Product>
+    <Description>Open RP1210 transport and SAE J1939 protocol foundation for heavy-vehicle software.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- CS15xx/CS0419: doc-comment nits. SYSLIB0032: HandleProcessCorruptedStateExceptions is a no-op on .NET 8 and that is fine - it is there for the Framework host. -->
+    <NoWarn>$(NoWarn);CS1591;CS1573;CS1570;CS1572;CS1574;CS1587;CS1711;CS0419;SYSLIB0032</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

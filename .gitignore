@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+*.swp
+
+# Test and bench artefacts
+TestResults/
+*.log
+*.pcap
+*.candump
+
+# NuGet
+*.nupkg
+packages/
+
+# OS
+Thumbs.db
+.DS_Store
