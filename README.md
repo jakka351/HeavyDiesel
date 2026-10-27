@@ -27,8 +27,10 @@ The code was lifted out of a shipping commercial product (Tester Engineering Hea
 0.1.0 - foundation. Compiles clean, passes its smoke test, and is wired end to end against the simulator. It has been run against real adapters inside the product it came from, but this repository has not yet been bench-verified against iron. Treat every "BENCH-CONFIRM" comment in the source as a live request.
 
 ## Quick start - no hardware
-    git clone https://github.com/jakka351/Heavy
+    git clone https://github.com/jakka351/HeavyDiesel
+      
     cd HeavyDiesel
+      
     dotnet build HeavyDiesel.sln -c Release
     
 Open HeavyDiesel.sln in Visual Studio 2019/2022 and run HeavyDiesel.Bench, or run src\HeavyDiesel.Bench\bin\x86\Release\net481\HeavyDiesel.Bench.exe.
